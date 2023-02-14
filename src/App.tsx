@@ -272,11 +272,13 @@ const App = () => {
               </Grid.Col>
             </Grid>
           </section>
+          <Anchor href='https://nanyangadvertising.com/contactus/' underline={false}>
           <section style={{ padding: "50px", backgroundColor: "#f4a620" }}>
             <Center>
               <Title style={{ color: "white" }} className={classes.headingSubTitle}>ORDER NOW!</Title>
             </Center>
           </section>
+          </Anchor>
           <section style={{ paddingBottom: "10px" }}>
             <Stack>
               <div span={8} style={{ height: "100%", width: "100%" }}> <iframe style="border:0;" style={{ height: "100%", width: "100%", borderRadius: "5px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.774946621124!2d103.85620941534455!3d1.3103595620646231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c8f7238dcb%3A0x3b5e8c488c92c45a!2s265%20Jln%20Besar%2C%20Singapore%20208938!5e0!3m2!1sen!2ssg!4v1676352301276!5m2!1sen!2ssg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

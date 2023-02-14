@@ -11,10 +11,12 @@ const DrawerNav = () => {
       <Header height={80} p="md" style={{backgroundColor:"#faeddf"}}>
         <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: "20px" }}>
           <Burger opened={opened} onClick={() => setOpened(true)} />
+          <Anchor href="https://nanyangadvertising.com" underline={false}>
           <Group style={{marginLeft:"auto"}}>        
               <Text color="black" style={{fontFamily: `Raleway, sans-serif`}}>Nanyang Advertising</Text>
               <Avatar src={Logo}></Avatar>
             </Group>
+            </Anchor>
         </div>
       </Header>
       <Drawer
