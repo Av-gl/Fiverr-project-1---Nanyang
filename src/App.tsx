@@ -1,180 +1,300 @@
-import React from 'react';
-import logo from './logo.svg';
+// @ts-nocheck
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { useMediaQuery } from '@mantine/hooks';
 import HeaderNav from './components/headerNav';
 import DrawerNav from './components/drawerNav';
-import { Center, createStyles, Grid, Stack, Text, Title } from '@mantine/core';
+import hero from './images/hero.jpg'
+import laserMarking from './images/laserMarking.jpg'
+import laserEngraving from './images/laserEngraving.jpg'
+import laserEtching from './images/laserEtching.jpg'
+import handshake from './images/handshake.jpg'
+import Slide1 from './images/Slide 1.jpg'
+import Slide2 from './images/Slide 2.jpg'
+import Slide3 from './images/Slide 3.jpg'
+import Slide4 from './images/Slide 4.jpg'
+import Slide5 from './images/Slide 5.jpeg'
+import { Anchor, Center, createStyles, Grid, Image, Stack, Text, Title } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
 
 const App = () => {
   const matches = useMediaQuery('(min-width: 850px)');
-  const matches2 = useMediaQuery('(min-width: 680px)')
+  const matches2 = useMediaQuery('(min-width: 680px)');
+  const [height, setHeight] = useState(0)
+  const ref = useRef(null)
+  const [height2, setHeight2] = useState(0)
+  const ref2 = useRef(null)
+  const [height3, setHeight3] = useState(0)
+  const ref3 = useRef(null)
+  const [height4, setHeight4] = useState(0)
+  const ref4 = useRef(null)
+
+  useEffect(() => {
+    //@ts-ignore
+    setHeight(ref.current.clientHeight)
+    //@ts-ignore
+    setHeight2(ref2.current.clientHeight)
+    //@ts-ignore
+    setHeight3(ref3.current.clientHeight)
+    //@ts-ignore
+    setHeight4(ref4.current.clientHeight)
+  })
+
 
   const useStyles = createStyles({
-    headingTitle : {
-        fontSize:"15vw",
-        fontFamily: `Quicksand, sans-serif`,
-        '@media (max-width: 600px)': {
-            fontSize:"17vw"
-        },
+    headingTitle: {
+      fontSize: "15vw",
+      fontFamily: `Quicksand, sans-serif`,
+      '@media (max-width: 600px)': {
+        fontSize: "17vw"
+      },
     },
-    headingSubTitle : {
-        fontSize:"4vw",
-        fontFamily: `Quicksand, sans-serif`,
-        '@media (max-width: 600px)': {
-            fontSize:"5vw"
-        },
-    },subTitleContent: {
-      fontSize:"1vw",
-      '@media (max-width: 1000px)': {
-          fontSize:"1.7vw"
+    headingSubTitle: {
+      fontSize: "4vw",
+      fontFamily: `Quicksand, sans-serif`,
+      '@media (max-width: 600px)': {
+        fontSize: "5vw"
+      },
+    }, subTitleContent: {
+      fontSize: "1.1vw",
+      '@media (max-width: 1100px)': {
+        fontSize: "1.7vw"
       },
       '@media (max-width: 660px)': {
-          fontSize:"2.7vw"
+        fontSize: "2.7vw"
       },
-      '@media (max-width: 380px)': {
-          fontSize:"3.7vw"
+      '@media (max-width: 420px)': {
+        fontSize: "3.7vw"
       },
-  },
-    subTitle : {
-      fontSize:"6vw",
+    },
+    subTitle: {
+      fontSize: "6vw",
       '@media (max-width: 400px)': {
-          fontSize:"8vw"
+        fontSize: "8vw"
       },
-  },
-})
+    },
+  })
 
-const { classes } = useStyles();
+  const { classes } = useStyles();
 
   return (
     <>
-      {matches ? <HeaderNav/> : <DrawerNav />}
-      {matches2 ? <> 
-      <div style={{height:`calc(100vh - 80px)`,backgroundImage:`url("https://images.unsplash.com/photo-1576916385844-befd8945138c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80")`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center center"}}>
-          <Center style={{height:"100%"}}>
-              <Stack style={{margin:"0px 0px 0px 20px"}}>
-                  <Title style={{ color:"white"}} className={classes.headingTitle}>LASERS</Title>
-                  <Text style={{color:"white"}} className={classes.headingSubTitle}>A One Stop Solution.</Text>
-              </Stack>
+      {matches ? <HeaderNav /> : <DrawerNav />}
+      {matches2 ? <>
+        <div style={{ height: `calc(100vh - 80px)`, backgroundImage: `url(${hero})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center center" }}>
+          <Center style={{ height: "100%" }}>
+            <Stack style={{ margin: "0px 0px 0px 20px" }}>
+              <Title style={{ color: "white" }} className={classes.headingTitle}>SIGNAGES</Title>
+              <Text style={{ color: "white" }} className={classes.headingSubTitle}>Let our quality speak for your business.</Text>
+            </Stack>
           </Center>
-      </div>
-      <Text style={{backgroundColor:"#31302f",color:"#f8eee1"}} align="center">SOMETHING AMAZING IS ABOUT TO HAPPEN</Text>
-      <section style={{height:"auto",backgroundColor:"#faeddf", margin:"0px", padding:"0px"}}>
-        <Grid style={{margin:"0px", padding:"30px"}}>
-          <Grid.Col span={6}>
-              <Stack>
-                <Title style={{color:"black"}} className={classes.subTitle}>Laser Marking</Title>
-                <Text className={classes.subTitleContent} style={{color:"black", marginRight:"50px"}}>Laser marking is a process of permanently marking or engraving a material by directing the output of a high-powered laser beam onto its surface. The laser beam removes material from the surface, creating a contrast or a permanent mark that can take the form of text, logos, barcodes, serial numbers, or graphics.
+        </div>
+        <Text style={{ backgroundColor: "#31302f", color: "#f8eee1" }} align="center">SOMETHING AMAZING IS ABOUT TO HAPPEN</Text>
+        <section id='LaserMarking' style={{ height: "auto", backgroundColor: "#faeddf", margin: "0px", padding: "0px" }}>
+          <Grid style={{ margin: "0px", padding: "30px" }}>
+            <Grid.Col span={6}>
+              <Stack ref={ref}>
+                <Title style={{ color: "black" }} className={classes.subTitle}>Laser Marking</Title>
+                <Text className={classes.subTitleContent} style={{ color: "black", marginRight: "50px" }}>Laser marking is a process of permanently marking or engraving a material by directing the output of a high-powered laser beam onto its surface. The laser beam removes material from the surface, creating a contrast or a permanent mark that can take the form of text, logos, barcodes, serial numbers, or graphics.
                   Laser marking is a versatile method of marking as it can be used on a wide range of materials, including metals, plastics, ceramics, and glass. It is a non-contact method, meaning that it does not physically touch the surface being marked, which makes it suitable for delicate or heat-sensitive materials.
                   There are several types of laser marking, including engraving, annealing, foaming, and ablation. Each type of laser marking uses a specific laser and marking process to produce a specific type of mark.
                   Laser marking offers several benefits over traditional marking methods, such as being more durable, precise, and legible.</Text>
               </Stack>
-          </Grid.Col>
-          <Grid.Col span={6} style={{backgroundImage:`url("https://images.unsplash.com/photo-1615286922420-c6b348ffbd62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center center"}}>
-          </Grid.Col>
-        </Grid>
-      </section>
-      <section style={{backgroundImage:`url("https://images.unsplash.com/photo-1638262052640-82e94d64664a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center center", height:"400px", padding:"30px"}}>
-        <Center style={{border:"10px solid white", height:`calc(400px - 30px)`}}>
-          <Title style={{color:"white"}} className={classes.headingSubTitle}>HIGH CUSTOMER SATISFACTION</Title>
-        </Center>
-      </section>
-      <section style={{height:"auto",backgroundColor:"#faeddf", margin:"0px", padding:"0px"}}>
-        <Grid style={{margin:"0px", padding:"30px"}}>
-        <Grid.Col span={6} style={{backgroundImage:`url("https://images.unsplash.com/photo-1620817025997-daae4e4a25f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center center"}}>
-          </Grid.Col>
-          <Grid.Col span={6}>
-              <Stack>
-                <Title style={{color:"black",marginLeft:"50px"}} className={classes.subTitle}>Laser Engraving</Title>
-                <Text className={classes.subTitleContent} style={{color:"black", marginLeft:"50px"}}>Laser engraving is a type of laser marking that involves removing material from the surface of a workpiece to create a three-dimensional image or design. This is done by directing a high-powered laser beam onto the surface of the material, which vaporizes or removes the material to create the desired design.
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <Image radius="md" height={height} src={laserMarking} alt="Laser marking" />
+            </Grid.Col>
+          </Grid>
+        </section>
+        <section style={{ padding: "30px" }}>
+          <Carousel
+            slideSize="auto"
+            slideGap="md"
+            dragFree
+            breakpoints={[
+              { maxWidth: 'md', slideSize: '50%' },
+              { maxWidth: 'sm', slideSize: '100%', slideGap: 0 },
+            ]}
+            align="start"
+          >
+            <Carousel.Slide style={{ margin: "5px" }}>
+              <Image fit="contain" radius="md" height={300} src={Slide1} alt="Dates engraved using a laser." caption="Dates engraved using a laser." />
+            </Carousel.Slide>
+            <Carousel.Slide style={{ margin: "5px" }}>
+              <Image fit="contain" radius="md" height={300} src={Slide2} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+            </Carousel.Slide>      <Carousel.Slide style={{ margin: "5px" }}>
+              <Image fit="contain" radius="md" height={300} src={Slide3} alt="'Normally Open' engraved using a laser." caption="'Normally Open' engraved using a laser." />
+            </Carousel.Slide>     <Carousel.Slide style={{ margin: "5px" }}>
+              <Image fit="contain" radius="md" height={300} src={Slide4} alt="'Water PI' engraved using a laser." caption="'Water PI' engraved using a laser." />
+            </Carousel.Slide>     <Carousel.Slide style={{ margin: "5px" }}>
+              <Image fit="contain" radius="md" height={300} src={Slide5} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+            </Carousel.Slide>
+            {/* ...other slides */}
+          </Carousel>
+        </section>
+        <section id='LaserEngraving' style={{ height: "auto", backgroundColor: "#faeddf", margin: "0px", padding: "0px" }}>
+          <Grid style={{ margin: "0px", padding: "30px" }}>
+            <Grid.Col span={6}>
+              <Image radius="md" height={height2} src={laserEngraving} alt="Laser engraving" />
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <Stack ref={ref2}>
+                <Title style={{ color: "black", marginLeft: "50px" }} className={classes.subTitle}>Laser Engraving</Title>
+                <Text className={classes.subTitleContent} style={{ color: "black", marginLeft: "50px" }}>Laser engraving is a type of laser marking that involves removing material from the surface of a workpiece to create a three-dimensional image or design. This is done by directing a high-powered laser beam onto the surface of the material, which vaporizes or removes the material to create the desired design.
                   Laser engraving can be used on a wide range of materials, including metals, plastics, glass, and wood, making it a versatile tool for many industrial and manufacturing applications. The precision and control offered by laser engraving allows for intricate designs and fine details to be created, making it ideal for personalizing or customizing products.
                   One of the benefits of laser engraving is that it is a non-contact process, which means that there is no physical contact between the engraving tool and the surface being engraved. This makes it suitable for delicate or heat-sensitive materials that cannot be marked using other methods.
                   Laser engraving is also a cost-effective solution for mass production, as a single laser engraving machine can be used to produce multiple products with the same design. </Text>
               </Stack>
-          </Grid.Col>
-        </Grid>
-      </section>
-      <section style={{padding:"50px",backgroundColor:"#f4a620"}}>
-        <Center>
-        <Title style={{color:"white"}} className={classes.headingSubTitle}>ORDER NOW!</Title>
-        </Center>
-      </section>
-      <section style={{height:"auto",backgroundColor:"#faeddf", margin:"0px", padding:"0px"}}>
-        <Grid style={{margin:"0px", padding:"30px"}}>
-          <Grid.Col span={6}>
-              <Stack>
-                <Title style={{color:"black"}} className={classes.subTitle}>Laser Edging</Title>
-                <Text className={classes.subTitleContent} style={{color:"black", marginRight:"50px"}}>Laser edging is a process used to shape and refine the edges of a material, usually glass or plastic. The laser beam is directed onto the edge of the material, removing small amounts of material until the desired shape and finish are achieved. This process is highly precise and can produce edges with smooth, clean, and polished finishes.
-                  Laser edging is commonly used in the production of eyeglasses, optical lenses, and other optical components. It is an effective method of edging because it provides accurate and consistent results, reduces waste and handling, and is faster than traditional mechanical methods. The laser beam can also be adjusted to produce a variety of edge shapes, including beveled, rounded, and flat edges.
-                One of the key benefits of laser edging is that it allows for greater control over the edging process. The laser beam can be adjusted to precisely remove the desired amount of material, resulting in highly accurate and consistent edges. This makes it ideal for producing high-quality optical components and other precision parts.
-                In addition to its precision, laser edging is also a safe and environmentally friendly process. </Text>
-              </Stack>
-          </Grid.Col>
-          <Grid.Col span={6} style={{backgroundImage:`url("https://images.unsplash.com/photo-1605419589330-0b6dede4c265?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center center"}}>
-          </Grid.Col>
-        </Grid>
-      </section></> 
-      :
-       <>
-      <div style={{height:`calc(100vh - 80px)`,backgroundImage:`url("https://images.unsplash.com/photo-1576916385844-befd8945138c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80")`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center center"}}>
-          <Center style={{height:"100%"}}>
-              <Stack style={{margin:"0px 0px 0px 20px"}}>
-                  <Title style={{ color:"white"}} className={classes.headingTitle}>LASERS</Title>
-                  <Text style={{color:"white"}} className={classes.headingSubTitle}>A One Stop Solution.</Text>
-              </Stack>
+            </Grid.Col>
+          </Grid>
+        </section>
+        <section style={{ backgroundImage: `url(${handshake})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center center", height: "400px", padding: "30px" }}>
+          <Center style={{ border: "10px solid white", height: `calc(400px - 30px)` }}>
+            <Title style={{ color: "white" }} className={classes.headingSubTitle}>HIGH CUSTOMER SATISFACTION</Title>
           </Center>
-      </div>
-      <Text style={{backgroundColor:"#31302f",color:"#f8eee1"}} align="center">SOMETHING AMAZING IS ABOUT TO HAPPEN</Text>
-      <section style={{height:"auto",backgroundColor:"#faeddf", margin:"0px", padding:"0px"}}>
-        <Grid style={{margin:"0px", padding:"30px"}}>
-          <Grid.Col span={12}>
-              <Stack>
-                <Title style={{color:"black"}} className={classes.subTitle}>Laser Marking</Title>
-                <Text className={classes.subTitleContent} style={{color:"black"}}>Laser marking is a process of permanently marking or engraving a material by directing the output of a high-powered laser beam onto its surface. The laser beam removes material from the surface, creating a contrast or a permanent mark that can take the form of text, logos, barcodes, serial numbers, or graphics.
-                  Laser marking is a versatile method of marking as it can be used on a wide range of materials, including metals, plastics, ceramics, and glass. It is a non-contact method, meaning that it does not physically touch the surface being marked, which makes it suitable for delicate or heat-sensitive materials.
-                  There are several types of laser marking, including engraving, annealing, foaming, and ablation. Each type of laser marking uses a specific laser and marking process to produce a specific type of mark.
-                  Laser marking offers several benefits over traditional marking methods, such as being more durable, precise, and legible.</Text>
+        </section>
+        <section id='LaserEtching' style={{ height: "auto", backgroundColor: "#faeddf", margin: "0px", padding: "0px" }}>
+          <Grid style={{ margin: "0px", padding: "30px" }}>
+            <Grid.Col span={6}>
+              <Stack ref={ref3}>
+                <Title style={{ color: "black" }} className={classes.subTitle}>Laser Etching</Title>
+                <Text className={classes.subTitleContent} style={{ color: "black", marginRight: "50px" }}>Laser etching is a process that uses a laser beam to remove material from a surface to create intricate patterns, images, or text. The laser beam is precisely focused and directed onto the surface to be etched, causing the material to vaporize and leave behind a shallow depression in the surface. The depth and width of the etching can be precisely controlled by adjusting the laser beam's intensity, duration, and focus. This makes laser etching an ideal technique for creating precise and intricate designs in a variety of materials, including metals, plastics, glass, and wood. The process is also non-contact, making it ideal for etching delicate or sensitive surfaces without causing damage. Laser etching is widely used in a variety of industries, including electronics, aerospace, medical devices, and jewelry.</Text>
               </Stack>
-          </Grid.Col>
-        </Grid>
-      </section>
-      <section style={{backgroundImage:`url("https://images.unsplash.com/photo-1638262052640-82e94d64664a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center center", height:"400px", padding:"30px"}}>
-        <Center style={{border:"10px solid white", height:`calc(400px - 30px)`}}>
-          <Title style={{color:"white"}} className={classes.headingSubTitle}>HIGH CUSTOMER SATISFACTION</Title>
-        </Center>
-      </section>
-      <section style={{height:"auto",backgroundColor:"#faeddf", margin:"0px", padding:"0px"}}>
-        <Grid style={{margin:"0px", padding:"30px"}}>
-          <Grid.Col span={12}>
-              <Stack>
-                <Title style={{color:"black"}} className={classes.subTitle}>Laser Engraving</Title>
-                <Text className={classes.subTitleContent} style={{color:"black"}}>Laser engraving is a type of laser marking that involves removing material from the surface of a workpiece to create a three-dimensional image or design. This is done by directing a high-powered laser beam onto the surface of the material, which vaporizes or removes the material to create the desired design.
-                  Laser engraving can be used on a wide range of materials, including metals, plastics, glass, and wood, making it a versatile tool for many industrial and manufacturing applications. The precision and control offered by laser engraving allows for intricate designs and fine details to be created, making it ideal for personalizing or customizing products.
-                  One of the benefits of laser engraving is that it is a non-contact process, which means that there is no physical contact between the engraving tool and the surface being engraved. This makes it suitable for delicate or heat-sensitive materials that cannot be marked using other methods.
-                  Laser engraving is also a cost-effective solution for mass production, as a single laser engraving machine can be used to produce multiple products with the same design. </Text>
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <Image radius="md" height={height} src={laserEtching} alt="Laser etching" />
+            </Grid.Col>
+          </Grid>
+        </section>
+
+        <Anchor href='https://nanyangadvertising.com/contactus/' underline={false}>
+          <section style={{ padding: "50px", backgroundColor: "#f4a620" }}>
+            <Center>
+              <Title style={{ color: "white" }} className={classes.headingSubTitle}>ORDER NOW!</Title>
+            </Center>
+          </section>
+        </Anchor>
+
+        <section>
+          <Grid style={{ margin: "0px", padding: "20px" }}>
+            <Grid.Col span={8} style={{ height: height4, width: "100%" }}> <iframe style="border:0;" style={{ height: "100%", width: "100%", borderRadius: "5px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.774946621124!2d103.85620941534455!3d1.3103595620646231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c8f7238dcb%3A0x3b5e8c488c92c45a!2s265%20Jln%20Besar%2C%20Singapore%20208938!5e0!3m2!1sen!2ssg!4v1676352301276!5m2!1sen!2ssg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </Grid.Col>
+            <Grid.Col ref={ref4} span={4} style={{ height: "100%", width: "100%" }}><Center style={{ height: "100%", width: "100%" }}><Stack>
+              <Text className={classes.subTitleContent} style={{ fontFamily: `Quicksand, sans-serif` }}>Location: <br />
+                265 JLN BESAR SINGAPORE 208938</Text>
+              <Text style={{ fontFamily: `Quicksand, sans-serif` }} className={classes.subTitleContent} >Email: <br />
+                nanyangadvertising@gmail.com</Text>
+              <Text style={{ fontFamily: `Quicksand, sans-serif` }} className={classes.subTitleContent} >Phone: <br />
+                +65 97209212</Text>
+              <Text style={{ fontFamily: `Quicksand, sans-serif` }} className={classes.subTitleContent}>Business Hours: <br />
+                Mon – Fri: 10am – 5pm</Text>
+            </Stack></Center></Grid.Col>
+
+          </Grid>
+        </section>
+      </>
+
+        :
+        <>
+          <div style={{ height: `calc(100vh - 80px)`, backgroundImage: `url(${hero})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center center" }}>
+            <Center style={{ height: "100%" }}>
+              <Stack style={{ margin: "0px 0px 0px 20px" }}>
+                <Title style={{ color: "white" }} className={classes.headingTitle}>SIGNAGES</Title>
+                <Text style={{ color: "white" }} className={classes.headingSubTitle}>Let our quality speak for your business.</Text>
               </Stack>
-          </Grid.Col>
-        </Grid>
-      </section>
-      <section style={{padding:"50px",backgroundColor:"#f4a620"}}>
-        <Center>
-        <Title style={{color:"white"}} className={classes.headingSubTitle}>ORDER NOW!</Title>
-        </Center>
-      </section>
-      <section style={{height:"auto",backgroundColor:"#faeddf", margin:"0px", padding:"0px"}}>
-        <Grid style={{margin:"0px", padding:"30px"}}>
-          <Grid.Col span={12}>
-              <Stack>
-                <Title style={{color:"black"}} className={classes.subTitle}>Laser Edging</Title>
-                <Text className={classes.subTitleContent} style={{color:"black"}}>Laser edging is a process used to shape and refine the edges of a material, usually glass or plastic. The laser beam is directed onto the edge of the material, removing small amounts of material until the desired shape and finish are achieved. This process is highly precise and can produce edges with smooth, clean, and polished finishes.
-                  Laser edging is commonly used in the production of eyeglasses, optical lenses, and other optical components. It is an effective method of edging because it provides accurate and consistent results, reduces waste and handling, and is faster than traditional mechanical methods. The laser beam can also be adjusted to produce a variety of edge shapes, including beveled, rounded, and flat edges.
-                One of the key benefits of laser edging is that it allows for greater control over the edging process. The laser beam can be adjusted to precisely remove the desired amount of material, resulting in highly accurate and consistent edges. This makes it ideal for producing high-quality optical components and other precision parts.
-                In addition to its precision, laser edging is also a safe and environmentally friendly process. </Text>
-              </Stack>
-          </Grid.Col>
-        </Grid>
-      </section></>}
+            </Center>
+          </div>
+          <Text style={{ backgroundColor: "#31302f", color: "#f8eee1" }} align="center">SOMETHING AMAZING IS ABOUT TO HAPPEN</Text>
+          <section id='LaserMarking' style={{ height: "auto", backgroundColor: "#faeddf", margin: "0px", padding: "0px" }}>
+            <Grid style={{ margin: "0px", padding: "30px" }}>
+              <Grid.Col span={12}>
+                <Stack ref={ref}>
+                  <Title style={{ color: "black" }} className={classes.subTitle}>Laser Marking</Title>
+                  <Text className={classes.subTitleContent} style={{ color: "black" }}>Laser marking is a process of permanently marking or engraving a material by directing the output of a high-powered laser beam onto its surface. The laser beam removes material from the surface, creating a contrast or a permanent mark that can take the form of text, logos, barcodes, serial numbers, or graphics.
+                    Laser marking is a versatile method of marking as it can be used on a wide range of materials, including metals, plastics, ceramics, and glass. It is a non-contact method, meaning that it does not physically touch the surface being marked, which makes it suitable for delicate or heat-sensitive materials.
+                    There are several types of laser marking, including engraving, annealing, foaming, and ablation. Each type of laser marking uses a specific laser and marking process to produce a specific type of mark.
+                    Laser marking offers several benefits over traditional marking methods, such as being more durable, precise, and legible.</Text>
+                </Stack>
+              </Grid.Col>
+            </Grid>
+          </section>
+          <section style={{ padding: "10px" }}>
+            <Carousel
+
+              slideGap="md"
+              breakpoints={[
+                { maxWidth: 'md', slideSize: '50%' },
+                { maxWidth: 'sm', slideSize: '100%', slideGap: 0 },
+              ]}
+              dragFree
+              align="start"
+            >
+              <Carousel.Slide >
+                <Image fit="contain" radius="md" height={300} src={Slide1} alt="Dates engraved using a laser." caption="Dates engraved using a laser." />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image fit="contain" radius="md" height={300} src={Slide2} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+              </Carousel.Slide>      <Carousel.Slide >
+                <Image fit="contain" radius="md" height={300} src={Slide3} alt="'Normally Open' engraved using a laser." caption="'Normally Open' engraved using a laser." />
+              </Carousel.Slide>     <Carousel.Slide  >
+                <Image fit="contain" radius="md" height={300} src={Slide4} alt="'Water PI' engraved using a laser." caption="'Water PI' engraved using a laser." />
+              </Carousel.Slide>     <Carousel.Slide >
+                <Image fit="contain" radius="md" height={300} src={Slide5} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+              </Carousel.Slide>
+              {/* ...other slides */}
+            </Carousel>
+          </section>
+          <section id='LaserEngraving' style={{ height: "auto", backgroundColor: "#faeddf", margin: "0px", padding: "0px" }}>
+            <Grid style={{ margin: "0px", padding: "30px" }}>
+              <Grid.Col span={12}>
+                <Stack ref={ref2}>
+                  <Title style={{ color: "black" }} className={classes.subTitle}>Laser Engraving</Title>
+                  <Text className={classes.subTitleContent} style={{ color: "black" }}>Laser engraving is a type of laser marking that involves removing material from the surface of a workpiece to create a three-dimensional image or design. This is done by directing a high-powered laser beam onto the surface of the material, which vaporizes or removes the material to create the desired design.
+                    Laser engraving can be used on a wide range of materials, including metals, plastics, glass, and wood, making it a versatile tool for many industrial and manufacturing applications. The precision and control offered by laser engraving allows for intricate designs and fine details to be created, making it ideal for personalizing or customizing products.
+                    One of the benefits of laser engraving is that it is a non-contact process, which means that there is no physical contact between the engraving tool and the surface being engraved. This makes it suitable for delicate or heat-sensitive materials that cannot be marked using other methods.
+                    Laser engraving is also a cost-effective solution for mass production, as a single laser engraving machine can be used to produce multiple products with the same design. </Text>
+                </Stack>
+              </Grid.Col>
+            </Grid>
+          </section>
+          <section style={{ backgroundImage: `url(${handshake})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center center", height: "400px", padding: "30px" }}>
+            <Center style={{ border: "10px solid white", height: `calc(400px - 30px)` }}>
+              <Title style={{ color: "white" }} className={classes.headingSubTitle}>HIGH CUSTOMER SATISFACTION</Title>
+            </Center>
+          </section>
+          <section id='LaserEtching' style={{ height: "auto", backgroundColor: "#faeddf", margin: "0px", padding: "0px" }}>
+            <Grid style={{ margin: "0px", padding: "30px" }}>
+              <Grid.Col span={12}>
+                <Stack ref={ref3}>
+                  <Title style={{ color: "black" }} className={classes.subTitle}>Laser Etching</Title>
+                  <Text className={classes.subTitleContent} style={{ color: "black" }}>Laser etching is a process that uses a laser beam to remove material from a surface to create intricate patterns, images, or text. The laser beam is precisely focused and directed onto the surface to be etched, causing the material to vaporize and leave behind a shallow depression in the surface. The depth and width of the etching can be precisely controlled by adjusting the laser beam's intensity, duration, and focus. This makes laser etching an ideal technique for creating precise and intricate designs in a variety of materials, including metals, plastics, glass, and wood. The process is also non-contact, making it ideal for etching delicate or sensitive surfaces without causing damage. Laser etching is widely used in a variety of industries, including electronics, aerospace, medical devices, and jewelry.</Text>
+                </Stack>
+              </Grid.Col>
+            </Grid>
+          </section>
+          <section style={{ padding: "50px", backgroundColor: "#f4a620" }}>
+            <Center>
+              <Title style={{ color: "white" }} className={classes.headingSubTitle}>ORDER NOW!</Title>
+            </Center>
+          </section>
+          <section style={{ paddingBottom: "10px" }}>
+            <Stack>
+              <div span={8} style={{ height: "100%", width: "100%" }}> <iframe style="border:0;" style={{ height: "100%", width: "100%", borderRadius: "5px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.774946621124!2d103.85620941534455!3d1.3103595620646231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c8f7238dcb%3A0x3b5e8c488c92c45a!2s265%20Jln%20Besar%2C%20Singapore%20208938!5e0!3m2!1sen!2ssg!4v1676352301276!5m2!1sen!2ssg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div ref={ref4} span={4} style={{ height: "100%", width: "100%" }}><Center style={{ height: "100%", width: "100%" }}><Stack>
+                <Text className={classes.subTitleContent} style={{ fontFamily: `Quicksand, sans-serif` }}>Location: <br />
+                  265 JLN BESAR SINGAPORE 208938</Text>
+                <Text style={{ fontFamily: `Quicksand, sans-serif` }} className={classes.subTitleContent} >Email: <br />
+                  nanyangadvertising@gmail.com</Text>
+                <Text style={{ fontFamily: `Quicksand, sans-serif` }} className={classes.subTitleContent} >Phone: <br />
+                  +65 97209212</Text>
+                <Text style={{ fontFamily: `Quicksand, sans-serif` }} className={classes.subTitleContent}>Business Hours: <br />
+                  Mon – Fri: 10am – 5pm</Text>
+              </Stack></Center></div>
+            </Stack>
+          </section>
+
+        </>}
 
     </>
   )

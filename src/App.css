@@ -1,0 +1,9 @@
+html {
+ 
+    /* This property makes the html
+    page to scroll smoothly */
+    /* If you want to directly move to the
+    section without scrolling, remove
+    this scroll-behavior property*/
+    scroll-behavior: smooth;
+}
