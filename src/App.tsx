@@ -160,11 +160,14 @@ const App = () => {
             </Carousel.Slide>
             <Carousel.Slide style={{ margin: "5px" }}>
               <Image fit="contain" radius="md" height={300} src={Slide2} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
-            </Carousel.Slide>      <Carousel.Slide style={{ margin: "5px" }}>
+            </Carousel.Slide>
+            <Carousel.Slide style={{ margin: "5px" }}>
               <Image fit="contain" radius="md" height={300} src={Slide3} alt="'Normally Open' engraved using a laser." caption="'Normally Open' engraved using a laser." />
-            </Carousel.Slide>     <Carousel.Slide style={{ margin: "5px" }}>
+            </Carousel.Slide>
+            <Carousel.Slide style={{ margin: "5px" }}>
               <Image fit="contain" radius="md" height={300} src={Slide4} alt="'Water PI' engraved using a laser." caption="'Water PI' engraved using a laser." />
-            </Carousel.Slide>     <Carousel.Slide style={{ margin: "5px" }}>
+            </Carousel.Slide>
+            <Carousel.Slide style={{ margin: "5px" }}>
               <Image fit="contain" radius="md" height={300} src={Slide5} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
             </Carousel.Slide>
             {/* ...other slides */}
@@ -324,11 +327,14 @@ const App = () => {
               </Carousel.Slide>
               <Carousel.Slide>
                 <Image fit="contain" radius="md" height={300} src={Slide2} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
-              </Carousel.Slide>      <Carousel.Slide >
+              </Carousel.Slide>
+              <Carousel.Slide >
                 <Image fit="contain" radius="md" height={300} src={Slide3} alt="'Normally Open' engraved using a laser." caption="'Normally Open' engraved using a laser." />
-              </Carousel.Slide>     <Carousel.Slide  >
+              </Carousel.Slide>
+              <Carousel.Slide  >
                 <Image fit="contain" radius="md" height={300} src={Slide4} alt="'Water PI' engraved using a laser." caption="'Water PI' engraved using a laser." />
-              </Carousel.Slide>     <Carousel.Slide >
+              </Carousel.Slide>
+              <Carousel.Slide >
                 <Image fit="contain" radius="md" height={300} src={Slide5} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
               </Carousel.Slide>
               {/* ...other slides */}
