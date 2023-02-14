@@ -4,7 +4,7 @@ import './App.css';
 import { useMediaQuery } from '@mantine/hooks';
 import HeaderNav from './components/headerNav';
 import DrawerNav from './components/drawerNav';
-import hero from './images/hero.jpg'
+import hero from './images/Hero.jpeg'
 import laserMarking from './images/laserMarking.jpg'
 import laserEngraving from './images/laserEngraving.jpg'
 import laserEtching from './images/laserEtching.jpg'
@@ -79,13 +79,25 @@ const App = () => {
 
   return (
     <>
+
+      {/*
+      Matches 2 is used to differentiate between the desktop and phone design. The first set of code (after ? and before :) is used for displaying on larger screens.
+      The second set of code (after :) is used for displayed on smaller screens.
+      
+      In order to change or add more images, upload the relevent images in the images folder in src. On top of this file, import the image as done previously. The component
+      used for displaying multiple images is known as Carousel. A Carousel slide is used for adding more images. In src, enter the name of the image. Do not change
+      the height attrinute as it will cause bugs to appear. 
+
+      Meta tags, the title, the favicon can be found in the public folder. The index.html consists of further details. 
+
+      */}
       {matches ? <HeaderNav /> : <DrawerNav />}
       {matches2 ? <>
         <div style={{ height: `calc(100vh - 80px)`, backgroundImage: `url(${hero})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center center" }}>
           <Center style={{ height: "100%" }}>
             <Stack style={{ margin: "0px 0px 0px 20px" }}>
               <Title style={{ color: "white" }} className={classes.headingTitle}>SIGNAGES</Title>
-              <Text style={{ color: "white" }} className={classes.headingSubTitle}>Let our quality speak for your business.</Text>
+              <Text style={{ color: "white" }} className={classes.headingSubTitle}><b>Let our quality speak for your business.</b></Text>
             </Stack>
           </Center>
         </div>
@@ -102,7 +114,33 @@ const App = () => {
               </Stack>
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image radius="md" height={height} src={laserMarking} alt="Laser marking" />
+              <Carousel
+                slideGap="md"
+                dragFree
+                loop
+                breakpoints={[
+                  { maxWidth: 'md', slideSize: '50%' },
+                  { maxWidth: 'sm', slideSize: '100%', slideGap: 0 },
+                ]}
+                align="start"
+              >
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height} src={Slide1} alt="Dates engraved using a laser." caption="Dates engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height} src={Slide2} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height} src={Slide3} alt="'Normally Open' engraved using a laser." caption="'Normally Open' engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height} src={Slide4} alt="'Water PI' engraved using a laser." caption="'Water PI' engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height} src={Slide5} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+                </Carousel.Slide>
+                {/* ...other slides */}
+              </Carousel>
             </Grid.Col>
           </Grid>
         </section>
@@ -133,9 +171,35 @@ const App = () => {
           </Carousel>
         </section>
         <section id='LaserEngraving' style={{ height: "auto", backgroundColor: "#faeddf", margin: "0px", padding: "0px" }}>
-          <Grid style={{ margin: "0px", padding: "30px" }}>
+          <Grid style={{ margin: "0px", padding: "20px" }}>
             <Grid.Col span={6}>
-              <Image radius="md" height={height2} src={laserEngraving} alt="Laser engraving" />
+              <Carousel
+                slideGap="md"
+                dragFree
+                loop
+                breakpoints={[
+                  { maxWidth: 'md', slideSize: '50%' },
+                  { maxWidth: 'sm', slideSize: '100%', slideGap: 0 },
+                ]}
+                align="start"
+              >
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height2} src={Slide1} alt="Dates engraved using a laser." caption="Dates engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height2} src={Slide2} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height2} src={Slide3} alt="'Normally Open' engraved using a laser." caption="'Normally Open' engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height2} src={Slide4} alt="'Water PI' engraved using a laser." caption="'Water PI' engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height2} src={Slide5} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+                </Carousel.Slide>
+                {/* ...other slides */}
+              </Carousel>
             </Grid.Col>
             <Grid.Col span={6}>
               <Stack ref={ref2}>
@@ -162,7 +226,33 @@ const App = () => {
               </Stack>
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image radius="md" height={height} src={laserEtching} alt="Laser etching" />
+              <Carousel
+                slideGap="md"
+                dragFree
+                loop
+                breakpoints={[
+                  { maxWidth: 'md', slideSize: '50%' },
+                  { maxWidth: 'sm', slideSize: '100%', slideGap: 0 },
+                ]}
+                align="start"
+              >
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height3} src={Slide1} alt="Dates engraved using a laser." caption="Dates engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height3} src={Slide2} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height3} src={Slide3} alt="'Normally Open' engraved using a laser." caption="'Normally Open' engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height3} src={Slide4} alt="'Water PI' engraved using a laser." caption="'Water PI' engraved using a laser." />
+                </Carousel.Slide>
+                <Carousel.Slide style={{ margin: "5px" }}>
+                  <Image fit="contain" radius="md" height={height3} src={Slide5} alt="Contact details engraved using a laser." caption="Contact details engraved using a laser." />
+                </Carousel.Slide>
+                {/* ...other slides */}
+              </Carousel>
             </Grid.Col>
           </Grid>
         </section>
@@ -198,9 +288,9 @@ const App = () => {
         <>
           <div style={{ height: `calc(100vh - 80px)`, backgroundImage: `url(${hero})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center center" }}>
             <Center style={{ height: "100%" }}>
-              <Stack style={{ margin: "0px 0px 0px 20px" }}>
+              <Stack style={{ margin: "0px 0px 0px 0px" }}>
                 <Title style={{ color: "white" }} className={classes.headingTitle}>SIGNAGES</Title>
-                <Text style={{ color: "white" }} className={classes.headingSubTitle}>Let our quality speak for your business.</Text>
+                <Text style={{ color: "white" }} className={classes.headingSubTitle}><b>Let our quality speak for your business.</b></Text>
               </Stack>
             </Center>
           </div>
@@ -273,11 +363,11 @@ const App = () => {
             </Grid>
           </section>
           <Anchor href='https://nanyangadvertising.com/contactus/' underline={false}>
-          <section style={{ padding: "50px", backgroundColor: "#f4a620" }}>
-            <Center>
-              <Title style={{ color: "white" }} className={classes.headingSubTitle}>ORDER NOW!</Title>
-            </Center>
-          </section>
+            <section style={{ padding: "50px", backgroundColor: "#f4a620" }}>
+              <Center>
+                <Title style={{ color: "white" }} className={classes.headingSubTitle}>ORDER NOW!</Title>
+              </Center>
+            </section>
           </Anchor>
           <section style={{ paddingBottom: "10px" }}>
             <Stack>
@@ -297,7 +387,6 @@ const App = () => {
           </section>
 
         </>}
-
     </>
   )
 }
