@@ -8,15 +8,15 @@ const DrawerNav = () => {
 
   return (
     <>
-      <Header height={80} p="md" style={{backgroundColor:"#faeddf"}}>
+      <Header height={80} p="md" style={{ backgroundColor: "#faeddf" }}>
         <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: "20px" }}>
           <Burger opened={opened} onClick={() => setOpened(true)} />
-          <Anchor href="https://nanyangadvertising.com" underline={false}>
-          <Group style={{marginLeft:"auto"}}>        
-              <Text color="black" style={{fontFamily: `Raleway, sans-serif`}}>Nanyang Advertising</Text>
+          <Anchor style={{ marginLeft: "auto" }} href="https://nanyangadvertising.com" underline={false}>
+            <Group style={{ marginLeft: "auto" }}>
+              <Text color="black" style={{ fontFamily: `Raleway, sans-serif` }}>Nanyang Advertising</Text>
               <Avatar src={Logo}></Avatar>
             </Group>
-            </Anchor>
+          </Anchor>
         </div>
       </Header>
       <Drawer
@@ -26,17 +26,17 @@ const DrawerNav = () => {
         padding="xl"
         size="sm"
       >
-        <Anchor href="#LaserMarking" underline={false} style={{ margin: "2px"}}>
-          <Text style={{fontFamily: `Raleway, sans-serif`}} color="black">Laser Marking</Text>
+        <Anchor href="#LaserMarking" underline={false} style={{ margin: "2px" }}>
+          <Text style={{ fontFamily: `Raleway, sans-serif` }} color="black">Laser Marking</Text>
         </Anchor>
-        <Anchor href="#LaserEngraving" underline={false} style={{ margin: "2px"}}>
-          <Text style={{fontFamily: `Raleway, sans-serif`}} color="black">Laser Engraving</Text>
+        <Anchor href="#LaserEngraving" underline={false} style={{ margin: "2px" }}>
+          <Text style={{ fontFamily: `Raleway, sans-serif` }} color="black">Laser Engraving</Text>
         </Anchor>
-        <Anchor href="#LaserEtching" underline={false} style={{ margin: "2px"}}>
-          <Text style={{fontFamily: `Raleway, sans-serif`}} color="black">Laser Etching</Text>
+        <Anchor href="#LaserEtching" underline={false} style={{ margin: "2px" }}>
+          <Text style={{ fontFamily: `Raleway, sans-serif` }} color="black">Laser Etching</Text>
         </Anchor>
-        <Anchor href="https://nanyangadvertising.com/contactus" underline={false} style={{ margin: "2px"}}>
-          <Text style={{fontFamily: `Raleway, sans-serif`}} color="black">Contact Us</Text>
+        <Anchor href="https://nanyangadvertising.com/contactus" underline={false} style={{ margin: "2px" }}>
+          <Text style={{ fontFamily: `Raleway, sans-serif` }} color="black">Contact Us</Text>
         </Anchor>
       </Drawer>
     </>
